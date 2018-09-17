@@ -1,0 +1,23 @@
+{
+  "name": "skilldb",
+  "version": "1.0.0",
+  "description": "Database listing skills, made for CODE University",
+  "main": "index.js",
+  "scripts": {
+    "test": "NODE_ENV=test nodemon --exec 'mocha --recursive'",
+    "server": "NODE_ENV=test nodemon --exec",
+    "client": "npm run start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aurumin/SkillDB.git"
+  },
+  "author": "Group 13",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Aurumin/SkillDB/issues"
+  },
+  "homepage": "https://github.com/Aurumin/SkillDB#readme"
+}
