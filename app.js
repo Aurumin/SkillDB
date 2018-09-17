@@ -8,12 +8,6 @@ const keys = require("./config/keys");
 // Connect to the database
 mongoose.connect(keys.mongoURL);
 
-// Internal dependencies
-const keys = require("./config/keys");
-
-// Connect to the database
-mongoose.connect(keys.mongoURL);
-
 // Start app with express
 const app = express();
 
