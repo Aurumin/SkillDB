@@ -1,6 +1,6 @@
 const express = require("express");
 
-// Start app
+// Start app with express
 const app = express();
 
 module.exports = app;
