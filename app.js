@@ -6,7 +6,10 @@ const mongoose = require("mongoose");
 const keys = require("./config/keys");
 
 // Connect to the database
-mongoose.connect(keys.mongoURL);
+mongoose.connect(
+  keys.mongoURL,
+  { useNewUrlParser: true }
+);
 
 // Start app with express
 const app = express();
