@@ -9,12 +9,12 @@ module.exports = {
   async createExampleStudent(req, res) {
     res.send(
       await Create({
-        firstName: "Cde",
-        lastName: "Abc",
+        lastName: "Pan",
         skills: [
           { name: "ExampleSkill", level: 2 },
           { name: "SuperSkill", level: 3 },
-          { name: "Java", level: 2 }
+          { name: "Java", level: 2 },
+          { name: "Python", level: 3 }
         ]
       })
     );
