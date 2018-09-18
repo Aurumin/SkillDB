@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 
 // Internal dependencies
 const keys = require("./config/keys");
+const dataRoutes = require("./routes/dataRoutes");
 
 // Connect to the database
 mongoose.connect(
@@ -13,5 +14,8 @@ mongoose.connect(
 
 // Start app with express
 const app = express();
+
+// Use router
+dataRoutes(app);
 
 module.exports = app;
