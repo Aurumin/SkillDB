@@ -23,6 +23,9 @@
   "dependencies": {
     "concurrently": "^4.0.1",
     "express": "^4.16.3",
-    "mongoose": "^5.2.15"
+    "mongoose": "^5.2.15",
+    "react-redux": "^5.0.7",
+    "redux": "^4.0.0",
+    "youtube-api-search": "0.0.5"
   }
 }
