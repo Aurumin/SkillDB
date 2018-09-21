@@ -1,3 +1,17 @@
-.body {
+body {
   background-color: black;
 }
+
+.searchbar{
+  height: 64px;
+  width: 1280px;
+  background-color: #FFF;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Removes placeholder when on Blure (Credit: https://stackoverflow.com/questions/9707021/how-do-i-auto-hide-placeholder-text-upon-focus-using-css-or-jquery) */
+input:focus::-webkit-input-placeholder { color:transparent; }
+input:focus:-moz-placeholder { color:transparent; } /* FF 4-18 */
+input:focus::-moz-placeholder { color:transparent; } /* FF 19+ */
+input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
