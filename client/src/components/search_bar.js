@@ -17,13 +17,12 @@ onInputChange = (event) => {
 
     render(){
       return (
-        <div>
+        <div className="searchbar-contianer">
         <input
         className = "searchbar"
         value = {this.state.term}
         onChange = {this.onInputChange}
-        placeholder = "search for skills"
-        />
+        placeholder = "search for skills" />
         <button className = 'searchButton'> <i class="fas fa-search"></i> </button>
         </div>
       );

@@ -6,7 +6,6 @@ body {
   height: 55px;
   width: 950px;
   background-color: #FFF;
-  margin: 0 auto;
   border-top-left-radius: 20px;
   text-align: center;
 }
@@ -24,10 +23,11 @@ input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
   margin: 0 20px;
   background: linear-gradient(136.83deg, #F96 0%, #FF5E62 100%);
   border-bottom-right-radius: 20px;
+  cursor: pointer;
 }
 
 .searchButton{
-  cursor: pointer;
+
 
 }
 
@@ -39,4 +39,32 @@ input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
 
 .fa-search:hover {
   cursor: pointer;
+}
+
+.iskill{
+  	height: 38px;
+    width: 99px;
+    color: #F96;
+    font-family: Roboto;
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    line-height: 38px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.logo-container{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+.searchbar-contianer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+
 }
