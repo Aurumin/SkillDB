@@ -7,14 +7,15 @@ class Logo extends Component {
 
   }
 
+
   render(){
     return (
       <div className="logo-container">
       <div className="logo-img">
-        <img src={require('./logo.png')} alt='placeholder-logo' />
+        <img id='logo' src={require('./logo.png')} alt='placeholder-logo' />
         </div>
         <div>
-        <span className="iskill">iskill</span>
+        <span id="iskill">iskill</span>
         </div>
       </div>
     );

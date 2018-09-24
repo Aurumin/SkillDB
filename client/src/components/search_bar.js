@@ -23,7 +23,7 @@ onInputChange = (event) => {
         value = {this.state.term}
         onChange = {this.onInputChange}
         placeholder = "search for skills" />
-        <button className = 'searchButton'> <i class="fas fa-search"></i> </button>
+        <button className = 'searchButton'> <i className="fas fa-search"></i> </button>
         </div>
       );
     }

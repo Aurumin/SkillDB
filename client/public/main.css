@@ -2,6 +2,7 @@ body {
   background-color: black;
 }
 
+
 .searchbar{
   height: 55px;
   width: 950px;
@@ -26,10 +27,6 @@ input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
   cursor: pointer;
 }
 
-.searchButton{
-
-
-}
 
 .fa-search{
   color: white;
@@ -41,7 +38,7 @@ input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
   cursor: pointer;
 }
 
-.iskill{
+#iskill{
   	height: 38px;
     width: 99px;
     color: #F96;
@@ -54,10 +51,14 @@ input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
     text-transform: uppercase;
 }
 
+
+
 .logo-container{
   display: flex;
   align-items: center;
   flex-direction: column;
+  margin-top: 80px;
+  margin-bottom: 90px;
 
 }
 
@@ -67,4 +68,31 @@ input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
   align-items: center;
   flex-direction: row;
 
+}
+
+.suggestions{
+  color: white;
+  margin: 15px;
+  margin-left: 60px;
+  margin-top: 25px;
+}
+
+.suggestion-box{
+  margin: 25px;
+}
+
+
+.suggestion-text{
+  color: white;
+  font-weight: 400;
+  border: solid white 1px;
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  padding: 10px;
+  margin: 20px;
+}
+
+.suggestion-text:hover{
+  cursor: pointer;
+  background-color: grey;
 }
