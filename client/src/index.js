@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 
 import SearchBar from './components/search_bar.js'
 import Logo from './components/logo.js'
-import Suggestions from './components/suggestions.js'
 
 class  App extends Component{
   constructor(props) {
@@ -17,7 +16,6 @@ class  App extends Component{
         <div className="all">
           <Logo />
           <SearchBar />
-          <Suggestions />
         </div>
     );
   }
