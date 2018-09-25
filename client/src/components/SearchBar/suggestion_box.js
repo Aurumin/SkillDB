@@ -1,11 +1,8 @@
 import React, {Component} from 'react';
-import ReactDOM from 'react-dom';
 
-class Suggestions extends Component {
+class SuggestionBox extends Component {
   constructor(props) {
     super(props);
-
-
 
     this.state = {
       skilldb: {
@@ -21,38 +18,32 @@ class Suggestions extends Component {
           'logo': ['photoshop', 'gimp'],
           'wireframe': ['invision', 'adobe']
         }
-      }//end of skilldb
-    } //end of state
-  } //end of constructor
-
-displaySuggestions = () => {
-
-}
+      }
+    }
+  }
 
   render(){
+
     let skills = this.state.skilldb.softwareengineer.webdevelopment;
-    //console.log(this.state.skilldb.softwareengineer.webdevelopment.includes(this.props.searchTerm));
-  //  console.log(this.state.skilldb.includes('softwareengineer'));
 
     const skillList = skills.map(skill => {
 
       return (
-        <span key={skill} onClick = {() => {
+        <span key={skill}
+        onClick = {() => {
           console.log(skill);
-        }} className="suggestion-text">{skill}</span>
+        }}
+        className="suggestion-text">{skill}</span>
       );
     })
 
     return(
-      <div className='suggestions'>
-        <span>Suggestions</span>
-        <div className='suggestion-box'>
-          {skillList}
-
+      <div className='suggestion-box'>
+        {skillList}
         </div>
-      </div>
     );
   }
+
 }
 
-export default Suggestions
+export default SuggestionBox

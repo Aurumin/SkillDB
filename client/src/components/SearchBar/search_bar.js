@@ -9,7 +9,7 @@ class SearchBar extends Component {
     super(props);
 
     this.state = {
-      term: ''
+      term: '' ,
     }
   }
 
@@ -17,6 +17,10 @@ onInputChange = (event) => {
   var term = event.target.value;
   this.setState({term});
 }
+
+
+
+
 
     render(){
       return (
@@ -26,6 +30,7 @@ onInputChange = (event) => {
             className = "searchbar"
             value = {this.state.term}
             onChange = {this.onInputChange}
+          
             placeholder = "search for skills" />
             <button className = 'searchButton'> <i className="fas fa-search"></i> </button>
           </div>

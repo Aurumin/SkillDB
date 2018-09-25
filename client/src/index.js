@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import ReactDOM from 'react-dom';
 
-import SearchBar from './components/search_bar.js'
+import SearchBar from './components/SearchBar/search_bar.js'
 import Logo from './components/logo.js'
 
 class  App extends Component{
