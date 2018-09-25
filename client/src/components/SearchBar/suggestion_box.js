@@ -18,10 +18,11 @@ class SuggestionBox extends Component {
           'logo': ['photoshop', 'gimp'],
           'wireframe': ['invision', 'adobe']
         }
-      },//end of skilldb
-      clickedTerm: ''
+      }//end of skilldb
     }
   }
+
+
 
   render(){
 
@@ -32,8 +33,8 @@ class SuggestionBox extends Component {
       return (
         <span key={clickedTerm}
         onClick = {() => {
-          this.setState({clickedTerm})
-          this.props.onClick(this.state.clickedTerm);
+
+          this.props.onClick(clickedTerm);
         }}
         className="suggestion-text">{clickedTerm}</span>
       );
