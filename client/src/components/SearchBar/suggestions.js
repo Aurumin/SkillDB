@@ -10,13 +10,9 @@ class Suggestions extends Component {
 
 
     this.state = {
-      //end of skilldb
+
     } //end of state
   } //end of constructor
-
-displaySuggestions = () => {
-
-}
 
   render(){
 
@@ -24,7 +20,7 @@ displaySuggestions = () => {
     return(
       <div className='suggestions'>
         <span>Suggestions</span>
-        <SuggestionBox />
+        <SuggestionBox onClick={suggestion => this.props.onClick(suggestion)}/>
       </div>
     );
   }

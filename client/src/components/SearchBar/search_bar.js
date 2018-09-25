@@ -18,8 +18,10 @@ onInputChange = (event) => {
   this.setState({term});
 }
 
-
-
+onButtonClick = (suggestion) => {
+  var term = suggestion;
+  this.setState({term});
+}
 
 
     render(){
@@ -30,11 +32,10 @@ onInputChange = (event) => {
             className = "searchbar"
             value = {this.state.term}
             onChange = {this.onInputChange}
-          
             placeholder = "search for skills" />
             <button className = 'searchButton'> <i className="fas fa-search"></i> </button>
           </div>
-          <Suggestions searchTerm={this.state.term}/>
+          <Suggestions onClick = {(suggestion) => this.onButtonClick(suggestion)} searchTerm={this.state.term}/>
         </div>
       );
     }

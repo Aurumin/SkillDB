@@ -18,7 +18,8 @@ class SuggestionBox extends Component {
           'logo': ['photoshop', 'gimp'],
           'wireframe': ['invision', 'adobe']
         }
-      }
+      },//end of skilldb
+      clickedTerm: ''
     }
   }
 
@@ -26,14 +27,15 @@ class SuggestionBox extends Component {
 
     let skills = this.state.skilldb.softwareengineer.webdevelopment;
 
-    const skillList = skills.map(skill => {
+    const skillList = skills.map(clickedTerm => {
 
       return (
-        <span key={skill}
+        <span key={clickedTerm}
         onClick = {() => {
-          console.log(skill);
+          this.setState({clickedTerm})
+          this.props.onClick(this.state.clickedTerm);
         }}
-        className="suggestion-text">{skill}</span>
+        className="suggestion-text">{clickedTerm}</span>
       );
     })
 
