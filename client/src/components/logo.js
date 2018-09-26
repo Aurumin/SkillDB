@@ -12,10 +12,10 @@ class Logo extends Component {
     return (
       <div className="logo-container">
       <div className="logo-img">
-        <img id='logo' src={require('./logo.png')} alt='placeholder-logo' />
+        <img id="logo" className='logo-big' src={require('./logo.png')} alt='placeholder-logo' />
         </div>
         <div>
-        <span id="iskill">iskill</span>
+        <span id="skilldb" className="skilldb-big">skilldb</span>
         </div>
       </div>
     );

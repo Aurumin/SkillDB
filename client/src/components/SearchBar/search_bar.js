@@ -23,6 +23,13 @@ onButtonClick = (suggestion) => {
   this.setState({term});
 }
 
+changeLogoSize = () => {
+  var Logo = document.getElementById('logo');
+  var SkillDB = document.getElementById('skilldb');
+  Logo.classList.remove('logo-big');
+  Logo.classList.add('logo-small');
+  SkillDB.style.display = 'none';
+}
 
     render(){
       return (
@@ -33,7 +40,7 @@ onButtonClick = (suggestion) => {
             value = {this.state.term}
             onChange = {this.onInputChange}
             placeholder = "search for skills" />
-            <button className = 'searchButton'> <i className="fas fa-search"></i> </button>
+            <button onClick={this.changeLogoSize} className = 'searchButton'> <i className="fas fa-search"></i> </button>
           </div>
           <Suggestions onClick = {(suggestion) => this.onButtonClick(suggestion)} searchTerm={this.state.term}/>
         </div>

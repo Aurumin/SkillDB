@@ -1,6 +1,52 @@
 body {
   background-color: black;
+  margin: 0;
+  padding: 0;
 }
+
+.logo-container{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 50px
+}
+
+.logo-img{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+.logo-big{
+  padding-top: 50px
+}
+
+.logo-small{
+  width: 20%;
+  height: auto;
+  padding-top: 0;
+  padding-bottom: 50px;
+}
+
+.skilldb-big{
+  	height: 38px;
+    width: 99px;
+    color: #F96;
+    font-family: Roboto;
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    line-height: 38px;
+    text-align: center;
+    text-transform: uppercase;
+
+}
+
+
 
 
 .searchbar{
@@ -38,29 +84,6 @@ input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
   cursor: pointer;
 }
 
-#iskill{
-  	height: 38px;
-    width: 99px;
-    color: #F96;
-    font-family: Roboto;
-    font-size: 32px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    line-height: 38px;
-    text-align: center;
-    text-transform: uppercase;
-}
-
-
-
-.logo-container{
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  margin-top: 80px;
-  margin-bottom: 90px;
-
-}
 
 .searchbar-contianer{
   display: flex;
