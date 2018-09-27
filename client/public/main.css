@@ -46,7 +46,9 @@ body {
 
 }
 
-
+.hidden{
+  display: none;
+}
 
 
 .searchbar{
@@ -117,5 +119,125 @@ input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
 
 .suggestion-text:hover{
   cursor: pointer;
-  background-color: grey;
+  /* background-color: grey; */
+}
+
+
+
+
+
+
+
+/*All css for the Search Results*/
+/*All css for the Search Results*/
+/*All css for the Search Results*/
+/*All css for the Search Results*/
+/*All css for the Search Results*/
+/*All css for the Search Results*/
+
+/*All css for the Search Results HEADER*/
+
+.searchresult-header{
+  color: grey;
+  text-transform: uppercase;
+  margin: 85px 100px 5px 100px;
+
+}
+.algin-header{
+  display: flex;
+}
+
+
+#skill-level{
+margin-left: 20%;
+}
+#skill-level:hover{
+  cursor: help;
+}
+#will-level{
+  margin-left: 3%
+}
+#will-level:hover{
+  cursor: help;
+}
+
+
+/* Tooltip container */
+.tooltip {
+
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 200px;
+    background-color: white;
+    color: #000;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    text-transform: lowercase;
+    top: 100%;
+    left: 50%;
+    margin-left: -60px;
+
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+/*All css for the Search Results PROFILES*/
+
+.div-name{
+  width: 30%;
+}
+.div-department{
+  width: 15%;
+}
+.div-skill{
+  width: 15%;
+}
+.div-level-will{
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.searched-profile{
+  color: white;
+  margin: 20px 0;
+  display: flex;
+}
+.complete-searched-profiles{
+  margin: 0 100px;
+}
+
+.div-skillLevel{
+  display: inline-block;
+  padding-left: 22%;
+}
+.div-willLevel{
+  display: inline-block;
+  padding-left: 3%;
+}
+.skillLevel{
+  color: white;
+}
+.div-slack{
+  padding-left: 5%;
+}
+
+#slack{
+  width: 20px;
+  height: auto;
 }

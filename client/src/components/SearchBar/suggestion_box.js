@@ -33,7 +33,6 @@ class SuggestionBox extends Component {
       return (
         <span key={clickedTerm}
         onClick = {() => {
-
           this.props.onClick(clickedTerm);
         }}
         className="suggestion-text">{clickedTerm}</span>
