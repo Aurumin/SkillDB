@@ -11,18 +11,20 @@ class SearchedProfiles extends Component {
     this.state = {
 
       user1: {
-        profileIMG: '',
+        profileIMG: "./profilepic.JPG",
         name: 'Alexander Boeckle',
         department: 'Software Engineering',
         skill: 'HTML',
         skillLevel: 3,
         willLevel: 1,
         slack: '',
-        tutor: true
+        isTutor: true
       }
 
     }//end of state
   }//end of constructor
+
+
 
     render(){
       return (
@@ -37,13 +39,16 @@ class SearchedProfiles extends Component {
             <div className='div-skill'>
               <span>{this.state.user1.skill}</span>
             </div>
+            <div>
+              {this.state.user1.isTutor ? <span className="tutor">TUTOR</span> : <span className="tutor-not-displayed tutor">TUTOR</span>}
+            </div>
             <div className='div-level-will'>
               <SkillLevel skillLevel={this.state.user1.skillLevel}/>
               <WillLevel willLevel={this.state.user1.willLevel}/>
             </div>
             <div className='div-slack'>
               <a href="http://slack.com">
-                <img id='slack' src={require('./slack.png')} />
+                <img className='slack' src={require('./slack.png')} />
               </a>
             </div>
         </div>

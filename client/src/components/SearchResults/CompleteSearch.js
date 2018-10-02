@@ -13,7 +13,6 @@ class CompleteSearch extends Component {
   } // end of constructor
 
   render(){
-    console.log(this.props.isShowing);
     return (
       <div id="searched-profiles" className={this.props.isShowing ? "" : "hidden"}>
         <Header />

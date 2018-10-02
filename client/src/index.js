@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ReactDOM from 'react-dom';
 
+import Header from './components/Header/header.js'
 import SearchBar from './components/SearchBar/search_bar.js'
 import Logo from './components/logo.js'
 import CompleteSearch from './components/SearchResults/CompleteSearch.js'
@@ -29,6 +30,7 @@ showResults = () => {
   render(){
     return (
         <div className="all">
+          <Header />
           <Logo />
           <SearchBar onSearching={this.showResults} />
           <CompleteSearch isShowing={this.state.isShowing}/>

@@ -25,7 +25,7 @@ class Header extends Component{
 
           <div id='will-level' className="tooltip">
             <span>will-level</span>
-            <span className="tooltiptext">Skill-Level determines your ability based on the CODE system<br/>0 - not interested<br/>1 - little interested<br/>2 - interested<br/>3 - highly interested</span>
+            <span className="tooltiptext">Will-Level determines your will to work and help with this skill<br/>0 - not interested<br/>1 - little interested<br/>2 - interested<br/>3 - highly interested</span>
           </div>
         </div>
         </div>
