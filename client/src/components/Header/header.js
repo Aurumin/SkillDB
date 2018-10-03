@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
-import ReactDOM from 'react-dom';
+
+import ProfileOverview from '../profile/profileoverview.js'
+import Modal from './modal.js'
 
 class Header extends Component {
   constructor(props) {
@@ -15,9 +17,18 @@ class Header extends Component {
           willLevel: 1,
           slack: '',
           isTutor: true
-        }
+        },
+        show: false
     }//end of state
   }//end of constructor
+
+  showModal = () => {
+  this.setState({...this.state, show: true});
+};
+
+hideModal = () => {
+  this.setState({...this.state, show: false});
+}
 
 render(){
   return (
@@ -29,7 +40,13 @@ render(){
       </ul>
     <div className="profile-link-header">
       <img className="slack" src={require('./slack.png')} />
-      <img className="profilepic" src={require('./profilepic.JPG')} />
+
+      <Modal show={this.state.show} handleClose={this.hideModal}>
+          <ProfileOverview />
+        </Modal>
+        <button id='header-profileoverview-button' type="button" onClick={this.showModal}>
+          <img className="profilepic" src={require('./profilepic.JPG')} />
+        </button>
 
     </div>
     </div>

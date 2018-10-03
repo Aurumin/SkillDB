@@ -11,10 +11,29 @@ class  App extends Component{
     super(props)
 
     this.state = {
-      isShowing: false
+      isShowing: false,
+      response: ''
     }
   }
 
+//making a test request to the backend
+  componentDidMount() {
+    this.callApi()
+      .then(res => this.setState({...this.state, response: res.name }))
+  }
+
+  callApi = async () => {
+    const response = await fetch('http://localhost:5000/api/hello');
+
+
+    const body = await response.json();
+
+    if (response.status !== 200) throw Error(body.message);
+
+    return body;
+  }
+
+//when clicking on suggestions show them in the search bar
 showResults = () => {
   this.setState({...this.state, isShowing: true});
 
@@ -34,6 +53,7 @@ showResults = () => {
           <Logo />
           <SearchBar onSearching={this.showResults} />
           <CompleteSearch isShowing={this.state.isShowing}/>
+          <h1>{this.state.response}</h1>
         </div>
     );
   }

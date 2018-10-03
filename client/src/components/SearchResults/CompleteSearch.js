@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import ReactDOM from 'react-dom';
 
 import Header from './header.js';
 import SearchedProfiles from './searchedProfiles.js';

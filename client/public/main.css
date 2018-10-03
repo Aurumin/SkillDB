@@ -1,8 +1,42 @@
+h1{
+  color: white;
+}
+
 body {
   background-color: black;
   margin: 0;
   padding: 0;
 }
+
+.div-header{
+  display: flex;
+}
+
+
+.pages-header{
+  color: white;
+  display: inline;
+  padding: 10px 0;
+  margin: 0 15px;
+  cursor: pointer;
+}
+
+.selected-page-header{
+  color: #FF5E62;
+  border-bottom: solid #FF5E62 1px;
+}
+.pages-header:hover{
+  color: #FF5E62;
+  border-bottom: solid #FF5E62 1px;
+}
+.profile-link-header{
+  display: inline;
+  float: right;
+  padding-top: 15px;
+  padding-left: 60%;
+}
+
+
 
 .logo-container{
   display: flex;
@@ -28,7 +62,8 @@ body {
 .logo-small{
   width: 20%;
   height: auto;
-  padding-top: 0;
+  margin-top: -50px;
+  padding-top: 0px;
   padding-bottom: 50px;
 }
 
@@ -224,7 +259,7 @@ margin-left: 20%;
 
 .div-skillLevel{
   display: inline-block;
-  padding-left: 22%;
+  padding-left: 0%;
 }
 .div-willLevel{
   display: inline-block;
@@ -234,10 +269,88 @@ margin-left: 20%;
   color: white;
 }
 .div-slack{
-  padding-left: 5%;
+  padding-left: 0%;
 }
 
-#slack{
+.profilepic{
+  width: 20px;
+  height: auto;
+  border-radius: 50%;
+  margin: 0 0;
+  display: inline-block;
+}
+
+.slack{
   width: 20px;
   height: auto;
 }
+.tutor-not-displayed{
+  visibility: hidden;
+}
+.tutor{
+  color: white;
+  font-size: 8px;
+  padding: 5px;
+  background: linear-gradient(136.83deg, #F96 0%, #FF5E62 100%);
+}
+
+/*MODAL*/
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width:100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.modal-main {
+  position:fixed;
+  background: black;
+  width: 80%;
+  height: auto;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  border: solid white 1px;
+}
+
+.display-block {
+  display: block;
+}
+
+.display-none {
+  display: none;
+}
+
+#header-profileoverview-button{
+  padding: 0;
+  margin: 0;
+  margin-left: 10px;
+  background-color: Transparent;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+}
+#close-profile-overview{
+  color: grey;
+  font-size: 30px;
+  padding: 0;
+  margin: 0;
+}
+
+#close-popup{
+  background-color: Transparent;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+}
+
+#close-popup{
+  width: 100%;
+  padding-left: 90%;
+  padding-top: 15px;
+
+}
+/*ProfileOverview*/

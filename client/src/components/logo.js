@@ -1,13 +1,6 @@
 import React, {Component} from 'react';
-import ReactDOM from 'react-dom';
 
 class Logo extends Component {
-  constructor(props) {
-    super(props);
-
-  }
-
-
   render(){
     return (
       <div className="logo-container">
