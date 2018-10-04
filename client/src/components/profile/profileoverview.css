@@ -19,6 +19,75 @@
   display: inline-block;
 }
 
-#pic{
-  border: solid green 1px;
+.div-ProfileOverview-header{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+#skill-header{
+  padding-left: 180px;
+}
+.skill-title{
+  text-transform: uppercase;
+  padding-left: 5px;
+}
+
+.seSkill{
+  color: grey;
+  padding-left: 5px;
+  text-transform: uppercase;
+
+}
+.li-se{
+  padding-top: 10px;
+  border-left: solid #FF5E62 2px;
+}
+
+#se-header{
+  color: #FF5E62;
+  border-left: solid #FF5E62 2px;
+}
+.pmSkill{
+  color: grey;
+  padding-left: 5px;
+  padding-top: 2px;
+  text-transform: uppercase;
+}
+
+.li-pm{
+  padding-top: 10px;
+  border-left: solid #3C74A6 2px;
+}
+
+#pm-header{
+  color: #3C74A6;
+  border-left: solid #3C74A6 2px;
+}
+.idSkill{
+  color: grey;
+  padding-left: 5px;
+  padding-top: 2px;
+  text-transform: uppercase;
+}
+
+.li-id{
+  padding-top: 10px;
+  border-left: solid #196F3D 2px;
+}
+
+#id-header{
+  color: #196F3D;
+  border-left: solid #196F3D 2px;
+}
+
+.skill-list{
+  list-style: none;
+}
+
+li{
+  margin: 0;
+  padding: 0;
 }

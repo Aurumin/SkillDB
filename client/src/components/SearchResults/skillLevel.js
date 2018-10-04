@@ -1,5 +1,8 @@
 import React, {Component} from 'react';
 
+// import SkillLevelOn from './skill-level-on';
+// import SkillLevelOff from './skill-level-off';
+
 class SkillLevel extends Component {
   constructor(props) {
     super(props);

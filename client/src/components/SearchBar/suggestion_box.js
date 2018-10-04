@@ -29,7 +29,6 @@ class SuggestionBox extends Component {
     let skills = this.state.skilldb.softwareengineer.webdevelopment;
 
     const skillList = skills.map(clickedTerm => {
-
       return (
         <span key={clickedTerm}
         onClick = {() => {

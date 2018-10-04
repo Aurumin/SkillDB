@@ -28,8 +28,7 @@ app.use(cors());
 app.get('/api/hello', Fkt)
 
 function Fkt(req,res){
-  res.json({ express: 'Backened',
-            name: 'viki' });
+  res.json({ express: 'Backened'});
 }
 
 if (typeof localStorage === "undefined" || localStorage === null) {

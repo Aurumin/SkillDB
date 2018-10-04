@@ -232,16 +232,25 @@ margin-left: 20%;
 /*All css for the Search Results PROFILES*/
 
 .div-name{
-  width: 30%;
+  width: 25%;
 }
 .div-department{
-  width: 15%;
+  width: 20%;
 }
 .div-skill{
   width: 15%;
+
 }
 .div-level-will{
-  width: 30%;
+  width: 34%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.div-skill-will-head{
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -313,7 +322,7 @@ margin-left: 20%;
   top:50%;
   left:50%;
   transform: translate(-50%,-50%);
-  border: solid white 1px;
+  border: solid #FF5E62 1px;
 }
 
 .display-block {
@@ -348,9 +357,11 @@ margin-left: 20%;
 }
 
 #close-popup{
-  width: 100%;
   padding-left: 90%;
   padding-top: 15px;
+}
 
+#div-close-button{
+  width: 100%;
 }
 /*ProfileOverview*/

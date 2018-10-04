@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
-//import Popup from 'reactjs-popup';
 import PropTypes from 'prop-types';
-import './profileoverview.css'
+import './profileoverview.css';
+import SkilleWillLevelHeader from '../SearchResults/skill-will-level-head.js';
+import DisplayUserSkills from './display-user-skills.js';
 
 
 class ProfileOverview extends Component {
@@ -15,8 +16,8 @@ class ProfileOverview extends Component {
         SlackID: "asdf",
         skills: {
           SE: ['HTML': [2,2], 'CSS': [2,2], 'JavaScript': [1,1], 'React.js': [1,0]],
-          PM: {'Management': [1,1]},
-          ID: ''
+          PM: ['Management': [1,1]],
+          ID: ['photoshop', 'UX']
 
 
         } //end skills
@@ -39,7 +40,11 @@ class ProfileOverview extends Component {
         <div>
           <img className="slack" src={require('../Header/slack.png')} />
         </div>
-
+        <div className="div-ProfileOverview-header">
+          <span id='skill-header'>SKILL</span>
+          <SkilleWillLevelHeader />
+        </div>
+          <DisplayUserSkills skills={this.state.currentUser.skills}/>
       </div>
     );
   }

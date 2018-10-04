@@ -19,7 +19,7 @@ class  App extends Component{
 //making a test request to the backend
   componentDidMount() {
     this.callApi()
-      .then(res => this.setState({...this.state, response: res.name }))
+      .then(res => this.setState({...this.state, response: res.express }))
   }
 
   callApi = async () => {
