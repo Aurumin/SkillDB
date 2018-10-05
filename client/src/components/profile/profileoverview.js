@@ -17,8 +17,8 @@ class ProfileOverview extends Component {
         SlackID: "asdf",
         skills: {
           SE: [['HTML', 2,2], ['CSS', 2,2], ['Java', 1,1], ['React.js', 1,0]],
-          PM: ['User Interview': [1,1]],
-          ID: ['photoshop', 'UX','invision','vr','ar','creativity','taking photos', 'creative state']
+          PM: [['User Interview',1,1]],
+          ID: [['photoshop',1,2], ['UX',3,2],['invision',1,1]]
 
 
         } //end skills

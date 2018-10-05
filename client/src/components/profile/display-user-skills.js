@@ -27,8 +27,8 @@ class DisplayUserSkills extends Component {
         </li>
         </div>
         <div className="div-user-skillwill">
-        <SkillLevel skillLevel={2}/>
-        <WillLevel willLevel={3}/>
+        <SkillLevel skillLevel={skill[1]}/>
+        <WillLevel willLevel={skill[2]}/>
         </div>
         </div>
       );
@@ -43,16 +43,16 @@ class DisplayUserSkills extends Component {
       return (
         <div className="display-user-skills">
         <div className="div-user-skill">
-        <li key={skill} className="li-pm">
+        <li key={skill[0]} className="li-pm">
         <span
         className="pmSkill">
-        {skill}
+        {skill[0]}
         </span>
         </li>
         </div>
         <div className="div-user-skillwill">
-        <SkillLevel skillLevel={1}/>
-        <WillLevel willLevel={2}/>
+        <SkillLevel skillLevel={skill[1]}/>
+        <WillLevel willLevel={skill[2]}/>
         </div>
         </div>
       );
@@ -68,16 +68,16 @@ class DisplayUserSkills extends Component {
         return (
           <div className="display-user-skills">
           <div className="div-user-skill">
-          <li key={skill} className="li-id">
+          <li key={skill[0]} className="li-id">
           <span
           className="idSkill">
-          {skill}
+          {skill[0]}
           </span>
           </li>
           </div>
           <div className="div-user-skillwill">
-          <SkillLevel skillLevel={2}/>
-          <WillLevel willLevel={1}/>
+          <SkillLevel skillLevel={skill[1]}/>
+          <WillLevel willLevel={skill[2]}/>
           </div>
           </div>
         );
