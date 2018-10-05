@@ -10,10 +10,30 @@ class WillLevel extends Component {
 
   render(){return (
         <div className="div-willLevel">
-        {this.props.willLevel === 3 ?  <span className="skillLevel">111</span> : null}
-        {this.props.willLevel === 2 ?  <span className="skillLevel">110</span> : null}
-        {this.props.willLevel === 1 ?  <span className="skillLevel">100</span> : null}
-        {this.props.willLevel === 0 ?  <span className="skillLevel">000</span> : null}
+        {this.props.willLevel === 3 ?
+          <span className="willLevel">
+            <img src={require('./will-level-on.png')} className='skill-level-icon'/>
+            <img src={require('./will-level-on.png')} className='skill-level-icon'/>
+            <img src={require('./will-level-on.png')} className='skill-level-icon'/>
+          </span> : null}
+        {this.props.willLevel === 2 ?
+          <span className="willLevel">
+            <img src={require('./will-level-on.png')} className='skill-level-icon'/>
+            <img src={require('./will-level-on.png')} className='skill-level-icon'/>
+            <img src={require('./will-level-on.png')} className='skill-level-icon skillWillLevelOf'/>
+          </span> : null}
+        {this.props.willLevel === 1 ?
+          <span className="willLevel">
+            <img src={require('./will-level-on.png')} className='skill-level-icon'/>
+            <img src={require('./will-level-on.png')} className='skill-level-icon skillWillLevelOf'/>
+            <img src={require('./will-level-on.png')} className='skill-level-icon skillWillLevelOf'/>
+          </span> : null}
+        {this.props.willLevel === 0 ?
+          <span className="willLevel">
+            <img src={require('./will-level-on.png')} className='skill-level-icon skillWillLevelOf'/>
+            <img src={require('./will-level-on.png')} className='skill-level-icon skillWillLevelOf'/>
+            <img src={require('./will-level-on.png')} className='skill-level-icon skillWillLevelOf'/>
+          </span> : null}
         </div>
     );
   }

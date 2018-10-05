@@ -8,17 +8,27 @@ class SearchedProfiles extends Component {
     super(props);
 
     this.state = {
-
+      searchedUsers: [
       user1: {
         profileIMG: "./profilepic.JPG",
         name: 'Alexander Boeckle',
         department: 'Software Engineering',
         skill: 'HTML',
-        skillLevel: 3,
-        willLevel: 1,
+        skillLevel: 1,
+        willLevel: 2,
         slack: '',
         isTutor: true
-      }
+      },
+    user2:{
+      profileIMG: "./profilepic.JPG",
+      name: 'Alexander Boeckle',
+      department: 'Software Engineering',
+      skill: 'HTML',
+      skillLevel: 1,
+      willLevel: 2,
+      slack: '',
+      isTutor: true
+    }]
 
     }//end of state
   }//end of constructor

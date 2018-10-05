@@ -41,7 +41,7 @@ render(){
     <div className="profile-link-header">
       <img className="slack" src={require('./slack.png')} />
 
-      <Modal show={this.state.show} handleClose={this.hideModal}>
+      <Modal show={this.state.show} handleClose={this.hideModal} className="modal">
           <ProfileOverview />
         </Modal>
         <button id='header-profileoverview-button' type="button" onClick={this.showModal}>

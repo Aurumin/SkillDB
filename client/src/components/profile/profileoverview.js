@@ -5,6 +5,7 @@ import SkilleWillLevelHeader from '../SearchResults/skill-will-level-head.js';
 import DisplayUserSkills from './display-user-skills.js';
 
 
+
 class ProfileOverview extends Component {
   constructor(props) {
     super(props)
@@ -15,9 +16,9 @@ class ProfileOverview extends Component {
         currentSemester: "Orientation Semester",
         SlackID: "asdf",
         skills: {
-          SE: ['HTML': [2,2], 'CSS': [2,2], 'JavaScript': [1,1], 'React.js': [1,0]],
-          PM: ['Management': [1,1]],
-          ID: ['photoshop', 'UX']
+          SE: [['HTML', 2,2], ['CSS', 2,2], ['Java', 1,1], ['React.js', 1,0]],
+          PM: ['User Interview': [1,1]],
+          ID: ['photoshop', 'UX','invision','vr','ar','creativity','taking photos', 'creative state']
 
 
         } //end skills
@@ -45,6 +46,9 @@ class ProfileOverview extends Component {
           <SkilleWillLevelHeader />
         </div>
           <DisplayUserSkills skills={this.state.currentUser.skills}/>
+          <div className='div-level-will'>
+
+          </div>
       </div>
     );
   }

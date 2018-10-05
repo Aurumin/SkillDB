@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import SkillLevel from '../SearchResults/skillLevel.js';
+import WillLevel from '../SearchResults/willLevel.js';
 
 class DisplayUserSkills extends Component {
   constructor(props){
@@ -15,28 +17,44 @@ class DisplayUserSkills extends Component {
     if(seSkills){
       seSkillList = seSkills.map(skill => {
       return (
-        <li key={skill} className="li-se">
+        <div className="display-user-skills">
+        <div className="div-user-skill">
+        <li key={skill[0]} className="li-se">
         <span
         className="seSkill">
-        {skill}
+        {skill[0]}
         </span>
         </li>
+        </div>
+        <div className="div-user-skillwill">
+        <SkillLevel skillLevel={2}/>
+        <WillLevel willLevel={3}/>
+        </div>
+        </div>
       );
     })
   } else {
-    pmSkillList = '';
+    seSkillList = '';
   }
 
     var pmSkillList;
     if(pmSkills){
       pmSkillList = pmSkills.map(skill => {
       return (
+        <div className="display-user-skills">
+        <div className="div-user-skill">
         <li key={skill} className="li-pm">
         <span
         className="pmSkill">
         {skill}
         </span>
         </li>
+        </div>
+        <div className="div-user-skillwill">
+        <SkillLevel skillLevel={1}/>
+        <WillLevel willLevel={2}/>
+        </div>
+        </div>
       );
     })
   } else {
@@ -48,12 +66,20 @@ class DisplayUserSkills extends Component {
     if(idSkills){
       idSkillList = idSkills.map(skill => {
         return (
+          <div className="display-user-skills">
+          <div className="div-user-skill">
           <li key={skill} className="li-id">
           <span
           className="idSkill">
           {skill}
           </span>
           </li>
+          </div>
+          <div className="div-user-skillwill">
+          <SkillLevel skillLevel={2}/>
+          <WillLevel willLevel={1}/>
+          </div>
+          </div>
         );
       });
     } else {

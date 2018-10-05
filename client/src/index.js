@@ -19,11 +19,11 @@ class  App extends Component{
 //making a test request to the backend
   componentDidMount() {
     this.callApi()
-      .then(res => this.setState({...this.state, response: res.express }))
+      .then(res => this.setState({...this.state, response: res.Users[0].Email}))
   }
 
   callApi = async () => {
-    const response = await fetch('http://localhost:5000/api/hello');
+    const response = await fetch('http://localhost:5000/search');
 
 
     const body = await response.json();
@@ -38,10 +38,9 @@ showResults = () => {
   this.setState({...this.state, isShowing: true});
 
   var Logo = document.getElementById('logo');
-  var SkillDB = document.getElementById('skilldb');
   Logo.classList.remove('logo-big');
   Logo.classList.add('logo-small');
-  SkillDB.style.display = 'none';
+
 
 }
 
@@ -53,7 +52,7 @@ showResults = () => {
           <Logo />
           <SearchBar onSearching={this.showResults} />
           <CompleteSearch isShowing={this.state.isShowing}/>
-          <h1>{this.state.response}</h1>
+          
         </div>
     );
   }
