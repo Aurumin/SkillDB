@@ -236,12 +236,15 @@ margin-left: 20%;
 /*All css for the Search Results PROFILES*/
 
 .div-name{
+  text-align: left;
   width: 25%;
 }
 .div-department{
+  text-align: left;
   width: 20%;
 }
 .div-skill{
+  text-align: left;
   width: 15%;
 
 }
@@ -295,7 +298,8 @@ margin-left: 20%;
   width: 20px;
   height: auto;
   border-radius: 50%;
-  margin: 0 0;
+  margin: 0;
+  margin-left: 20px;
   display: inline-block;
 }
 
@@ -344,9 +348,10 @@ margin-left: 20%;
 }
 
 #header-profileoverview-button{
+  width: 100%;
+  height: auto;
   padding: 0;
   margin: 0;
-  margin-left: 10px;
   background-color: Transparent;
   border: none;
   cursor:pointer;

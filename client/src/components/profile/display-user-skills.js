@@ -7,6 +7,9 @@ class DisplayUserSkills extends Component {
     super(props);
   }
   render(){
+    if(!this.props.skills){
+        return (<h1>Loding...</h1>)
+      }
 
 
     let seSkills = this.props.skills.SE
@@ -17,7 +20,7 @@ class DisplayUserSkills extends Component {
     if(seSkills){
       seSkillList = seSkills.map(skill => {
       return (
-        <div className="display-user-skills">
+        <div key={skill[0]} className="display-user-skills">
         <div className="div-user-skill">
         <li key={skill[0]} className="li-se">
         <span

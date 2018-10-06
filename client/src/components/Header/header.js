@@ -8,14 +8,17 @@ class Header extends Component {
     super(props);
 
     this.state = {
-        user1: {
+        user: {
           profileIMG: "./profilepic.JPG",
-          name: 'Alexander Boeckle',
+          name: "Alexander Böckle",
           department: 'Software Engineering',
-          skill: 'HTML',
-          skillLevel: 3,
-          willLevel: 1,
-          slack: '',
+          currentSemester: "Orientation Semester",
+          SlackID: "asdf",
+          skill: ['HTML', 2,0],
+          skills: {
+            SE: [['HTML', 2,2], ['CSS', 2,2], ['Java', 1,1], ['React.js', 1,0]],
+            PM: [['User Interview',1,1]]
+          },
           isTutor: true
         },
         show: false
@@ -42,7 +45,7 @@ render(){
       <img className="slack" src={require('./slack.png')} />
 
       <Modal show={this.state.show} handleClose={this.hideModal} className="modal">
-          <ProfileOverview />
+          <ProfileOverview userInfo={this.state.user}/>
         </Modal>
         <button id='header-profileoverview-button' type="button" onClick={this.showModal}>
           <img className="profilepic" src={require('./profilepic.JPG')} />
