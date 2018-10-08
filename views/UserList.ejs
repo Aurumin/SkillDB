@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>UserListe</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+</head>
+
+<body>
+    <div style="margin: 5%">
+
+
+        <h1 style="text-align: center">User Liste:</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID-Number</th>
+                    <th>Email</th>
+                    <th>Name</th>
+                    <th>Password</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <% for (var i=0; i<Users.length; i++){ %>
+                <tr>
+                    <td>
+                        <%= i %>
+                    </td>
+                    <td>
+                        <%= Users[i].Email %>
+                    </td>
+                    <td>
+                        <%= Users[i].Name %>
+                    </td>
+                    <td>
+                        <%= Users[i].PW  %>
+                    </td>
+                </tr>
+                <%  } %>
+
+            </tbody>
+
+        </table>
+        <div class="container" style="text-align: center; margin-top: 5%">
+            <a class="btn btn-primary" href="/Admin">Back</a> <br> <br>
+            <a class="btn btn-outline-danger" href="/">Logout</a> <br>
+        </div>
+    </div>
+</body>
+
+</html>

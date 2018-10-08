@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+</head>
+
+<body>
+    <h1>Suchergebnisse mit: "
+        <%= Suchbegriff %>" </h1>
+
+    <div style="margin: 10% 10% 10% 10%">
+        <table class="table table-striped table-dark">
+            <thead>
+                <tr>
+                    <th>
+                        <h3>ID</h3>
+                    </th>
+                    <th>
+                        <h3>Name und Infos</h3>
+                    </th>
+                    <th>
+                        <h3>Skills</h3>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <% for (var i=0; i<P.length; i++){ %>
+                <tr>
+                    <td>
+                        <strong>
+                            <%= P[i].ID %> </strong>
+                    </td>
+                    <td>
+                        <strong>
+                            <%= Namen[i] %>
+                        </strong>
+                        <br>Department: <%= P[i].Department %>
+                        <br>Photo: <%= P[i].Photo %>
+                        <br>Semester: <%= P[i].Semester %>
+                        <br>Status: <%= P[i].ST %>
+                    </td>
+                    <td>
+                        <ul>
+                            <% for (var k=0; k<P[i].Skills.length; k++){ %>
+                            </P>
+                            <li>
+                                <%=P[i].Skills[k][0]%>
+                                <table>
+                                    <tr>
+                                        <td>
+                                            Skill:
+                                            <%=P[i].Skills[k][1]%>
+                                        </td>
+                                        <td>
+                                            Will:
+                                            <%=P[i].Skills[k][2]%>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </li>
+                            <% } %>
+                        </ul>
+                        <br>
+                        <br>
+                    </td>
+                </tr>
+                <%  } %>
+
+            </tbody>
+
+        </table>
+    </div>
+
+
+
+</body>
+
+</html>

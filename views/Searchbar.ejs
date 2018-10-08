@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Search</title>
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a style="background-color: rgb(23, 124, 90)" class="navbar-brand" href="/Search">Skill DB</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="/Profile">My Profile</a></li>
+                <li><a href="/Profile/Account">Account</a></li>
+                <li><a href="/Profile/BasicInfo">Basic Info</a></li>
+                <li><a href="/Profile/MySkills">My Skills</a></li>
+                <li style="background-color: brown"><a href="/">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <h1 style="margin-bottom: 5%; text-align: center; margin-top: 5%">Search for People or Skills
+
+    </h1>
+
+    <div style="text-align: center; margin-top: 5%">
+        <label id="suggest1" style="background-color: rgb(255, 255, 255); color: rgb(255, 255, 255); margin: 1%; padding: 5px">------</label>
+        <label id="suggest2" style="background-color: rgb(255, 255, 255); color: rgb(255, 255, 255); margin: 1%; padding: 5px">------</label>
+        <label id="suggest3" style="background-color: rgb(255, 255, 255); color: rgb(255, 255, 255); margin: 1%; padding: 5px">------</label>
+        <label id="suggest4" style="background-color: rgb(255, 255, 255); color: rgb(255, 255, 255); margin: 1%; padding: 5px">------</label>
+        <label id="suggest5" style="background-color: rgb(255, 255, 255); color: rgb(255, 255, 255); margin: 1%; padding: 5px">------</label>
+        <label id="suggest6" style="background-color: rgb(255, 255, 255); color: rgb(255, 255, 255); margin: 1%; padding: 5px">------</label>
+
+    </div>
+
+    <div style="margin-bottom: 5%; text-align: center">
+        <form action="/Search" method="POST">
+            <input type="search" oninput="LiveSuggestion()" placeholder="Search for Skills or People" name="Suchbegriff"
+                id="Search123">
+            <button type="submit">Search</button>
+        </form>
+    </div>
+
+    <script type="text/javascript">
+        Verfuegbare_Skills = <%-JSON.stringify(Verfuegbare_Skills)%>
+
+        function LiveSuggestion() {
+            var Suchbegriff_aktuell = document.getElementById("Search123").value;
+            var max_Anzahl_Suggestions = 6;
+            var Suggestions = [];
+
+            console.log("Beginn");
+            console.log(Suchbegriff_aktuell);
+            for (var i = 0; i < Verfuegbare_Skills.length; i++) {
+                if (Suche_Robust2(Verfuegbare_Skills[i], Suchbegriff_aktuell)) {
+                    Suggestions.push(Verfuegbare_Skills[i]);
+                    console.log(Suggestions);
+                }
+            }
+            console.log("EndeEndeEndeEndeEndeEndeEndeEndeEndeEnde")
+
+            Suggestions = Suggestions.sort(shuffle);
+            var Suggestions_length = Suggestions.length;
+
+
+            var laenger = false;
+            while (Suggestions.length >= max_Anzahl_Suggestions) {
+                laenger = true;
+                if (Suggestions.length == max_Anzahl_Suggestions) {
+                    break;
+                }
+                Suggestions.pop();
+            }
+            if (laenger) {
+                Suggestions.pop();
+            }
+            if (laenger) {
+                var Mehr = "+ " + String(Suggestions_length - 5);
+                Suggestions.push(Mehr);
+            }
+            console.log("Nach Hier: ")
+            console.log(Suggestions);
+
+            console.log(Suggestions);
+            var Sugggest_name_list = ["suggest1", "suggest2", "suggest3", "suggest4", "suggest5", "suggest6"]
+            for (var g = 0; g < 6; g++) {
+                if (Suggestions[g] != undefined) {
+                    console.log("111111")
+
+                    document.getElementById(Sugggest_name_list[g]).innerHTML = Suggestions[g]
+                    document.getElementById(Sugggest_name_list[g]).style.color = "red"
+                } else {
+                    console.log("222222")
+                    document.getElementById(Sugggest_name_list[g]).innerHTML = "aa"
+                    document.getElementById(Sugggest_name_list[g]).style.backgroundColor = "white"
+                    document.getElementById(Sugggest_name_list[g]).style.color = "white"
+                }
+            }
+            console.log(Suggestions)
+        }
+
+        function shuffle() {
+            return Math.random() - 0.5;
+        }
+
+        function Suche_Robust2(A, B) {
+            // Leerzeichen,Sonderzeichen usw entfernen
+            var Entfernen = [" ", "-", "_", "+", ",", ".", ";", "'", "#", '"', "?", "!", "%", "&", "1", "2", "0", "3",
+                "4", "5", "6", "7", "8", "9"
+            ];
+            var A_Alt;
+            var B_Alt;
+            for (var j = 0; j < Entfernen.length; j++) {
+                while (true) {
+                    A_Alt = A;
+                    B_Alt = B;
+                    A = A.replace(Entfernen[j], "");
+                    B = B.replace(Entfernen[j], "");
+                    if (A_Alt == A && B_Alt == B) {
+                        break;
+                    }
+                }
+            }
+
+            // Buchstaben ersetzen
+            var Ersetzen = [
+                ["ö", "oe"],
+                ["ä", "ae"],
+                ["ü", "ue"],
+                ["ß", "ss"]
+            ];
+            for (var jj = 0; jj < Ersetzen.length; jj++) {
+                while (true) {
+                    A_Alt = A;
+                    B_Alt = B;
+                    A = A.replace(Ersetzen[jj][0], Ersetzen[jj][1]);
+                    B = B.replace(Ersetzen[jj][0], Ersetzen[jj][1]);
+                    if (A_Alt == A && B_Alt == B) {
+                        break;
+                    }
+                }
+            }
+
+            // alles klein
+            A = A.toLowerCase();
+            B = B.toLowerCase();
+
+            // Wenn Suchbegriff Teilmenge von Begriff in Database ist dann treffer
+            var zaehler = 0;
+            for (var i = 0; i < A.length; i++) {
+                if (A[i] == A[i - 1] && zaehler == 1) {
+                    zaehler = 0;
+                }
+                if (A[i] == B[zaehler]) {
+                    zaehler++;
+                    if (zaehler == B.length) {
+                        break;
+                    }
+                } else {
+                    zaehler = 0;
+                }
+            }
+
+            var Match;
+            if (zaehler == B.length) {
+                Match = true;
+            } else {
+                Match = false;
+            }
+            return Match;
+        }
+    </script>
+
+
+
+    <% if (!(typeof(Suchbegriff) === 'undefined')){ %>
+    <h1 style="text-align: center">Suchergebnisse mit: "
+        <%=Suchbegriff%>"
+    </h1>
+
+    <div style="margin: 2% 10% 10% 10%; text-align: center">
+        <table class="table table-striped table-dark">
+            <thead>
+                <tr>
+                    <th>
+                        <h3>ID</h3>
+                    </th>
+                    <th>
+                        <h3>Name und Infos</h3>
+                    </th>
+                    <th>
+                        <h3>Skills</h3>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <% for (var i=0; i<P.length; i++){ %>
+                <tr>
+                    <td>
+                        <strong>
+                            <%= P[i].ID %> </strong>
+                    </td>
+                    <td>
+                        <strong>
+                            <%= Namen[i] %>
+                        </strong> <br>
+                        <br>Department:
+                        <%= P[i].Department %>
+                        <br>Photo:
+                        <%= P[i].Photo %>
+                        <br>Semester:
+                        <%= P[i].Semester %>
+                        <br>Status:
+                        <%= P[i].ST %>
+                    </td>
+                    <td>
+                        <ul>
+                            <% for (var k=0; k<P[i].Skills.length; k++){ %>
+                            </P>
+                            <li>
+                                <%=P[i].Skills[k][0]%>
+                                <table>
+                                    <tr>
+                                        <td>
+                                            Skill:
+                                            <%=P[i].Skills[k][1]%>
+                                        </td>
+                                        <td style="color: aliceblue">___</td>
+                                        <td>
+                                            Will:
+                                            <%=P[i].Skills[k][2]%>
+                                        </td>
+                                    </tr>
+                                </table>
+
+
+                            </li>
+                            <% } %>
+                        </ul>
+                        <br>
+                        <br>
+                    </td>
+                </tr>
+                <%  } %>
+
+            </tbody>
+
+        </table>
+    </div>
+
+    <% } %>
+</body>
+
+</html>

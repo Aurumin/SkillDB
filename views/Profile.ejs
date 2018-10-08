@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Profile</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+        .B {
+            background-color: rgb(255, 255, 255)
+        }
+    </style>
+</head>
+
+<body class="B">
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/Search">Skill DB</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li style="background-color: rgb(23, 124, 90)"><a href="/Profile">My Profile</a></li>
+                <li><a href="/Profile/Account">Account</a></li>
+                <li><a href="/Profile/BasicInfo">Basic Info</a></li>
+                <li><a href="/Profile/MySkills">My Skills</a></li>
+                <li style="background-color: brown"><a href="/">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div style="text-align: center">
+        <h1 style="margin-top: 3%; margin-bottom: 5%">Welcome to your Profile,
+            <%=User.Name%>
+        </h1>
+        <div>
+            <h3 style="margin-bottom: 2%">Personal Info <a style="font-size: smaller" href="/Profile/BasicInfo">edit</a> </h3>
+            <p> Photo:
+                <%=User.Photo%>
+            </p>
+            <p> Name:
+                <%=User.Name%>
+            </p>
+
+            <p> Status:
+                <%=User.ST%>
+            </p>
+            <p> Semester:
+                <%=User.Semester%>
+            </p>
+        </div>
+            <h3 style="margin-top: 5%">Skills <a style="font-size: smaller" href="/Profile/MySkills">edit</a></h3>
+
+
+
+        <div style="margin: 2% 10% 10% 10%; text-align: center">
+            <table class="table table-striped table-dark">
+                <thead>
+                    <tr>
+                        <th>
+                            <h4>Skill</h4>
+                        </th>
+                        <th>
+                            <h4>Skill Level</h4>
+                        </th>
+                        <th>
+                            <h4>Will Level</h4>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <% for (var k=0; k<User.Skills.length; k++){ %>
+                    <tr>
+                        <td>
+                            <strong>
+                                <%=User.Skills[k][0]%>
+                            </strong>
+                        </td>
+                        <td>
+                            <%=User.Skills[k][1]%>
+                        </td>
+                        <td>
+                            <%=User.Skills[k][2]%>
+                        </td>
+                    </tr>
+                    <%  } %>
+
+                </tbody>
+
+            </table>
+        </div>
+
+
+    </div>
+
+
+</body>
+
+</html>

@@ -12,24 +12,20 @@ class  App extends Component{
 
     this.state = {
       isShowing: false,
-      response: ''
+      user: {}
     }
   }
 
 //making a test request to the backend
   componentDidMount() {
     this.callApi()
-      .then(res => this.setState({...this.state, response: res.Users[0].Email}))
+      .then(res => this.setState({...this.state, user: res.User}))
   }
 
   callApi = async () => {
-    const response = await fetch('http://localhost:5000/search');
-
-
+    const response = await fetch('http://localhost:5000/Profile');
     const body = await response.json();
-
     if (response.status !== 200) throw Error(body.message);
-
     return body;
   }
 
@@ -52,7 +48,6 @@ showResults = () => {
           <Logo />
           <SearchBar onSearching={this.showResults} />
           <CompleteSearch isShowing={this.state.isShowing}/>
-          
         </div>
     );
   }

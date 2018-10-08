@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Account</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/Search">Skill DB</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="/Profile">My Profile</a></li>
+                <li style="background-color: rgb(23, 124, 90)"><a href="/Profile/Account">Account</a></li>
+                <li><a href="/Profile/BasicInfo">Basic Info</a></li>
+                <li><a href="/Profile/MySkills">My Skills</a></li>
+                <li style="background-color: brown"><a href="/">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <div style="text-align: center; margin: 5% ">
+        <h1 style="text-align: center; margin: 2%""> Your Account Data</h1>
+
+        <div>
+            <p> Email:
+                <%=User.Email%>
+            </p>
+            <p> Name: 
+                <%=User.Name%>
+            </p>
+
+            <p> Password:
+                <%=User.PW%>
+            </p>
+
+        </div>
+
+        <div style="
+            margin-top: 5%">
+
+
+            <h3 style="margin: 2%"">Change Account Data</h3>
+
+                <form action="/Account_p_name" method="POST"
+                style="margin-bottom: 3%; margin-top: 3%">
+                <p>
+                    change Name: <input type="text" name="NAME" id="Name_id" placeholder="Your new name" pattern=".{4,50}"
+                        required title="4 to 50 Characters" required>
+                    <button>Submit</button>
+                </p>
+                </form>
+                <form action="/Account_p_pw" method="POST">
+                    <p>
+                        New Password: <input type="Password" name="PW1" id="PW_id1" placeholder="Password" pattern=".{4,15}"
+                            required title="5 to 15 Characters" required>
+                    </p>
+                    <p>
+                        Confirm New Password: <input type="Password" name="PW2" id="PW_id2" placeholder="Password" pattern=".{4,15}"
+                            required title="5 to 15 Characters" required>
+                    </p>
+                    <p>
+                        <button>Submit</button>
+                    </p>
+                </form>
+
+
+    </div>
+    </div>
+</body>
+
+</html>

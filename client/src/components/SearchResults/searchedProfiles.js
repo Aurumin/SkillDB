@@ -18,7 +18,7 @@ class SearchedProfiles extends Component {
           department: 'Software Engineering',
           currentSemester: "Orientation Semester",
           SlackID: "asdf",
-          skill: ['HTML', 2,0],
+          skill: ['HTML', 3,0],
           skills: {
             SE: [['HTML', 2,2], ['CSS', 2,2], ['Java', 1,1], ['React.js', 1,0]],
             PM: [['User Interview',1,1]]
@@ -31,9 +31,9 @@ class SearchedProfiles extends Component {
             department: 'Product Management',
             currentSemester: "Orientation Semester",
             SlackID: "asdf",
-            skill: ['HTML', 1,3],
+            skill: ['HTML', 0,3],
             skills: {
-              SE: [['HTML', 2,2], ['CSS', 2,2], ['Java', 1,1], ['React.js', 1,0]],
+              SE: [['HTML', 2,2], ['CSS', 2,2], ['Java', 1,1], ['React.js', 1,0], ['CSS', 2,2], ['Java', 1,1], ['React.js', 1,0], ['CSS', 2,2], ['Java', 1,1], ['React.js', 1,0], ['CSS', 2,2], ['Java', 1,1], ['React.js', 1,0]],
               PM: [['User Interview',1,1],['Management',2,3]],
               ID: [['photoshop',1,2], ['Video Editing',3,2],['invision',1,1]]
             },
@@ -45,7 +45,7 @@ class SearchedProfiles extends Component {
               department: 'Interaction Desgin',
               currentSemester: "Orientation Semester",
               SlackID: "asdf",
-              skill: ['HTML', 1,2],
+              skill: ['HTML', 3,3],
               skills: {
                 PM: [['Marketing',1,1],['Management',2,3]],
                 ID: [['photoshop',1,2], ['Video Editing',3,2],['invision',2,3],["UX",3,0]]
@@ -53,29 +53,36 @@ class SearchedProfiles extends Component {
               isTutor: true
             }
         ],
-        show: false
+
+        show: {}
 
     }//end of state
   }//end of constructor
 
-  showModal = () => {
-  this.setState({...this.state, show: true});
+  showModal = (name) => {
+  // this.setState({...this.state, show: true});
+  this.setState({...this.state, show: {...this.state.show, [name]: true}});
   };
 
-  hideModal = () => {
-  this.setState({...this.state, show: false});
+  hideModal = (name) => {
+  // this.setState({...this.state, show: false});
+  this.setState({...this.state, show: {...this.state.show, [name]: false}});
   }
 
 
     render(){
       var users = this.state.searchedUsers
       var DisplayUsers = users.map(user => {
+        var name= user.name;
+        console.log(name);
+        console.log(this.state.show[user.name]);
+
         return (
           <div className='complete-searched-profiles'>
-          <Modal show={this.state.show} handleClose={this.hideModal} className="modal">
+          <Modal show={this.state.show[user.name]} handleClose={() => {this.hideModal(user.name);}} className="modal">
               <ProfileOverview userInfo={user} />
             </Modal>
-            <button id='header-profileoverview-button' type="button" onClick={this.showModal}>
+            <button id='header-profileoverview-button' type="button" onClick={() => {this.showModal(user.name);}}>
 
             <div className="searched-profile">
               <div className='div-name'>
@@ -105,13 +112,14 @@ class SearchedProfiles extends Component {
           </div>
         );
       })
-
+      console.log(this.state);
       return (
         <div>
         {DisplayUsers}
         </div>
       );
     }
+
 
 }
 

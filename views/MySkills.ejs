@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+        .container {
+            width: 90%;
+            height: 500px;
+            margin-top: 1%;
+            background-color: rgb(250, 250, 250)
+        }
+
+        .container2 {
+            width: 90%;
+            /* height: 200px; */
+            margin-top: 5%;
+            margin-left: 5%;
+            margin-right: 5%;
+            padding: 1%;
+            background-color: rgba(23, 117, 172, 0.171)
+        }
+
+        .col {
+            width: 23%;
+            height: 100px;
+            margin: 5%;
+            float: left;
+            text-align: center
+        }
+
+        .Button {
+            margin-left: 47.5%;
+            width: 20%
+        }
+        .Slider {
+            margin-left: 40%;
+            width: 20%
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/Search">Skill DB</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="/Profile">My Profile</a></li>
+                <li><a href="/Profile/Account">Account</a></li>
+                <li><a href="/Profile/BasicInfo">Basic Info</a></li>
+                <li style="background-color: rgb(23, 124, 90)"><a href="/Profile/MySkills">My Skills</a></li>
+                <li style="background-color: brown"><a href="/">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <form action="/Profile/MySkills/Delete" method="POST">
+        <div class="container2">
+            <div style="text-align: center">
+                <h3><strong>Your Skills:</strong></h3>
+                <% for (var ii=0; ii<User.Skills.length; ii++){  %>
+                <strong style="color:darkblue">
+                    <%=User.Skills[ii][0] %>
+                    [
+                    <%=User.Skills[ii][1] %> /
+                    <%=User.Skills[ii][2] %> ]
+                    <button name="On" value="<%=ii%>" type="submit">x</button>
+                    <br>
+                </strong>
+                <% } %>
+            </div>
+        </div>
+    </form>
+
+    <form action="/Profile/MySkills/AddSkill" method="POST">
+        <div class="container">
+            <h1 style="text-align: center">Add a Skill to your Profile</h1>
+            <div class="col">
+                <div style="margin: 2%">
+                    <strong>Software Engineering</strong><br>
+                </div>
+                <select name="SE">
+                    <option selected>-</option>
+                    <% var iii=0 %>
+                    <% while (SV[iii]!="\0") { %>
+                    <option>
+                        <%=SV[iii]%>
+                    </option>
+                    <% iii++ %>
+                    <% } %>
+                    <% iii++ %>
+                </select>
+            </div>
+
+            <div class="col">
+                <div style="margin: 2%">
+                    <strong>Product Development</strong><br>
+                </div>
+                <select name="PM">
+                    <option selected>-</option>
+
+                    <% while (SV[iii]!="\0") { %>
+                    <option>
+                        <%=SV[iii]%>
+                    </option>
+                    <% iii++ %>
+                    <% } %>
+                    <% iii++ %>
+
+                </select>
+            </div>
+
+            <div class="col">
+                <div style="margin: 2%">
+                    <strong>Interactive Design</strong><br>
+                </div>
+                <select name="ID">
+                    <option selected>-</option>
+
+                    <% while (iii != SV.length ) { %>
+                    <option>
+                        <%=SV[iii]%>
+                    </option>
+                    <% iii++ %>
+                    <% } %>
+                </select>
+            </div>
+            <div class="Slider">
+                <strong>Skill Level</strong>
+                <p></p> <input type="range" name="Skill_level" min="0" max="3" value="0"> <br>
+                <strong>Will Level</strong>
+                <p></p> <input type="range" name="Will_level" min="0" max="3" value="0">
+                <br>
+                <br>
+            </div>
+            <div class="Button">
+                <button>Add Skill</button>
+            </div>
+        </div>
+    </form>
+
+    <div class="container2" style="margin-bottom: 5%">
+        <div style="text-align: center">
+            <h4><strong>Create a new Skill:</strong></h4>
+            <br>
+            <form action="/Profile/MySkills/AddNewSkill" method="POST">
+                <input name="NEW_SKILL" type="text" placeholder="New Skill" required>
+                <button>Create New Skill</button>
+                <div style="margin: 1%">
+                    <strong style="color: rgb(0, 0, 0)">SE </strong><input type="radio" name="AUSWAHL_DEPARTMENT" value="SE"
+                        required>
+                    <strong style="color: rgb(0, 0, 0)">PM </strong><input type="radio" name="AUSWAHL_DEPARTMENT" value="PM"
+                        required>
+                    <strong style="color: rgb(0, 0, 0)">ID </strong><input type="radio" name="AUSWAHL_DEPARTMENT" value="ID"
+                        required>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>BasicInfo</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/Search">Skill DB</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="/Profile">My Profile</a></li>
+                <li><a href="/Profile/Account">Account</a></li>
+                <li style="background-color: rgb(23, 124, 90)"><a href="/Profile/BasicInfo">Basic Info</a></li>
+                <li><a href="/Profile/MySkills">My Skills</a></li>
+                <li style="background-color: brown"><a href="/">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <div style="text-align: center; margin-top: 5%; margin-bottom: 10% ">
+        <h1 style="text-align: center; margin: 2%""> Basic Information </h1>
+
+        <div>
+            <p> Status: 
+                <%=User.ST%>
+            </p>
+
+            <p> Department:
+                <%=User.Department%>
+            </p>
+            <p> Semester:
+                <%=User.Semester%>
+                </p>
+            <p> Photo:
+                <%=User.Photo%>
+            </p>
+            <p> SlackID:
+                <%=User.SlackID%>
+            </p>
+
+        </div>
+
+        <div style="
+            margin-top: 5%">
+
+
+            <h3 style="margin: 2%"">Change Your Data</h3>
+
+                <form action="/BasicInfo_Status" method="POST"
+                style="margin-bottom: 3%; margin-top: 3%">
+                <strong>Status: </strong>
+                <p style="margin-top: 1%;   margin-bottom: 2%">
+                    Student <input type="radio" name="STATUS" id="Name_id1" value="Student" required>
+                    Teacher <input type="radio" name="STATUS" id="Name_id2" value="Teacher" required>
+                    <button>Submit</button>
+                </p>
+                </form>
+
+                <form action="/BasicInfo_Department" method="POST" style="margin-bottom: 3%; margin-top: 3%">
+                    <strong>Department: </strong>
+                    <p style="margin-top: 1%;   margin-bottom: 2%">
+                        Software Engineering <input type="radio" name="DEPARTMENT" id="DEPARTMENT1" value="SE" required>
+                        Product Management <input type="radio" name="DEPARTMENT" id="DEPARTMENT2" value="PM" required>
+                        Interactive Design <input type="radio" name="DEPARTMENT" id="DEPARTMENT3" value="ID" required>
+                        <button>Submit</button>
+                    </p>
+                </form>
+
+                <form action="/BasicInfo_Semester" method="POST" style="margin-bottom: 3%; margin-top: 3%">
+                    <strong>Semester: </strong>
+                    <p style="margin-top: 1%;   margin-bottom: 2%">
+                        0th <input type="radio" name="SEMESTER" id="SEMESTER0" value="0" required>
+                        1st <input type="radio" name="SEMESTER" id="SEMESTER1" value="1" required>
+                        2nd <input type="radio" name="SEMESTER" id="SEMESTER2" value="2" required>
+                        3rd <input type="radio" name="SEMESTER" id="SEMESTER3" value="3" required>
+                        4th <input type="radio" name="SEMESTER" id="SEMESTER4" value="4" required>
+                        5th <input type="radio" name="SEMESTER" id="SEMESTER5" value="5" required>
+                        6th <input type="radio" name="SEMESTER" id="SEMESTER6" value="6" required>
+                        <button>Submit</button>
+                    </p>
+                </form>
+
+                <form action="/BasicInfo_SlackID" method="POST">
+                    <strong>SlackID: </strong>
+                    <p style="margin-bottom: 1%; margin-top: 1%">
+                        <input type="text" name="SLACKID" id="SLACKID1" placeholder="SlackID"><button>Submit</button>
+                    </p>
+                </form>
+
+
+    </div>
+    </div>
+</body>
+
+</html>

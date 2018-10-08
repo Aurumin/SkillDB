@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>UserListe</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+</head>
+
+<body>
+    <div style="margin: 5%; text-align: center">
+
+        <form action="/Admin/Delete" method="POST">
+            <h1 style="text-align: center; margin-bottom: 5%">Delete a User created Skill</h1>
+            <div>
+                <div class="col">
+                    <div style="margin: 2%">
+                        <strong>Software Engineering</strong><br>
+                    </div>
+                    <select name="SE">
+                        <option selected>-</option>
+                        <% var iii=0 %>
+                        <% while (SV[iii]!="\0") { %>
+                        <% if (Dict_Skills_Department[SV[iii]][1]=="CF"){ %>
+                        <option style="color: blue">
+                            <%=SV[iii]%>
+                        </option>
+                        <% } else { %>
+                        <option>
+                            <%=SV[iii]%>
+                        </option>
+                        <% } %>
+                        <% iii++ %>
+                        <% } %>
+                        <% iii++ %>
+                    </select>
+                </div>
+
+                <div class="col">
+                    <div style="margin: 2%">
+                        <strong>Product Development</strong><br>
+                    </div>
+                    <select name="PM">
+                        <option selected>-</option>
+
+                        <% while (SV[iii]!="\0") { %>
+                        <% if (Dict_Skills_Department[SV[iii]][1]=="CF"){ %>
+                        <option style="color: blue">
+                            <%=SV[iii]%>
+                        </option>
+                        <% } else { %>
+                        <option>
+                            <%=SV[iii]%>
+                        </option>
+                        <% } %>
+                        <% iii++ %>
+                        <% } %>
+                        <% iii++ %>
+
+                    </select>
+                </div>
+
+                <div class="col">
+                    <div style="margin: 2%">
+                        <strong>Interactive Design</strong><br>
+                    </div>
+                    <select name="ID">
+                        <option selected>-</option>
+
+                        <% while (iii != SV.length ) { %>
+                        <% if (Dict_Skills_Department[SV[iii]][1]=="CF"){ %>
+                        <option style="color: blue">
+                            <%=SV[iii]%>
+                        </option>
+
+                        <% } else { %>
+                        <option>
+                            <%=SV[iii]%>
+                        </option>
+                        <% } %>
+                        <% iii++ %>
+                        <% } %>
+                    </select>
+                </div>
+                <div style="margin: 3%" class="Button">
+                    <button>Delete Skill</button>
+                </div>
+            </div>
+
+        </form>
+
+        <div class="container" style="text-align: center; margin-top: 5%">
+            <a class="btn btn-primary" href="/Admin">Back</a> <br> <br>
+            <a class="btn btn-danger" href="/">Logout</a> <br>
+        </div>
+    </div>
+</body>
+
+</html>

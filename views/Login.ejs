@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+</head>
+
+<body>
+    <div style="text-align: center; margin: 8% ">
+        <h1>Welcome to Skill DB</h1>
+        <div style="margin-top: 5%">
+            <form action="/Profile" method="POST">
+                Email: <input type="text" name="EMAIL" id="Email_id" placeholder="VN.NN@code.berlin" required>
+                Password: <input type="Password" name="PW" id="PW_id" placeholder="Password" pattern=".{4,15}" required
+                    title="5 to 15 Characters" required>
+                <button>Login</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

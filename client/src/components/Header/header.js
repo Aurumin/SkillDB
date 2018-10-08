@@ -16,14 +16,28 @@ class Header extends Component {
           SlackID: "asdf",
           skill: ['HTML', 2,0],
           skills: {
-            SE: [['HTML', 2,2], ['CSS', 2,2], ['Java', 1,1], ['React.js', 1,0]],
-            PM: [['User Interview',1,1]]
+            SE: [['HTML', 2,2], ['CSS', 2,2], ['Java', 1,1], ['React.js', 1,0], ['CSS', 2,2], ['Java', 1,1], ['React.js', 1,0], ['CSS', 2,2], ['Java', 1,1], ['React.js', 1,0], ['CSS', 2,2], ['Java', 1,1], ['React.js', 1,0]],
+            PM: [['User Interview',1,1],['User Interview',1,1],['User Interview',1,1]]
           },
           isTutor: true
         },
         show: false
     }//end of state
   }//end of constructor
+
+//gets the current Users Data
+  // componentDidMount() {
+  //   this.callApi()
+  //     .then(res => this.setState({...this.state, user: res.User}))
+  // }
+  //
+  // callApi = async () => {
+  //   const response = await fetch('http://localhost:5000/Profile');
+  //   const body = await response.json();
+  //   if (response.status !== 200) throw Error(body.message);
+  //   return body;
+  // }
+
 
   showModal = () => {
   this.setState({...this.state, show: true});
@@ -32,6 +46,8 @@ class Header extends Component {
 hideModal = () => {
   this.setState({...this.state, show: false});
 }
+
+
 
 render(){
   return (
@@ -42,8 +58,9 @@ render(){
         <li className="pages-header">Tutor</li>
       </ul>
     <div className="profile-link-header">
+    <a href='http://slack.com'>
       <img className="slack" src={require('./slack.png')} />
-
+    </a>
       <Modal show={this.state.show} handleClose={this.hideModal} className="modal">
           <ProfileOverview userInfo={this.state.user}/>
         </Modal>

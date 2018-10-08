@@ -30,7 +30,7 @@ class DisplayUserSkills extends Component {
         </li>
         </div>
         <div className="div-user-skillwill">
-        <SkillLevel skillLevel={skill[1]}/>
+        <SkillLevel skillLevel={skill[1]} className="skillLevel-displayuserskills"/>
         <WillLevel willLevel={skill[2]}/>
         </div>
         </div>
@@ -92,7 +92,7 @@ class DisplayUserSkills extends Component {
 
 
     return (
-      <div>
+      <div  className="user-skills">
         <ul className="skill-list">
         {this.props.skills.SE ? <li key="se" id='se-header' className='skill-title'>SE</li>:''}
         {seSkillList}

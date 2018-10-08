@@ -24,21 +24,21 @@ class ProfileOverview extends Component {
         <div>
           <img className="profilepic-large" src={require('../Header/profilepic.JPG')} />
         </div>
-        <div>
+        <div className="profileoverview-heading-spacing">
           <span>{currentUser.name}</span>
         </div>
-        <div>
-          <span>{currentUser.department}<span id="dot"> &bull; </span>{currentUser.currentSemester}</span>
+        <div className="profileoverview-heading-spacing">
+          <span>{currentUser.department}<span id="dot"> &bull; </span>{currentUser.Semester > 0 && currentUser.Semester < 6 ? "Core Semester" : "Orientation Semester"}</span>
         </div>
-        <div>
+        <div className="profileoverview-heading-spacing">
           <img className="slack" src={require('../Header/slack.png')} />
         </div>
-        <div className="div-ProfileOverview-header">
+        <div className="div-ProfileOverview-header profileoverview-heading-spacing">
           <span id='skill-header'>SKILL</span>
           <SkilleWillLevelHeader />
         </div>
-          <DisplayUserSkills skills={currentUser.skills}/>
-          <div className='div-level-will'>
+        <div className='div-level-will'>
+            <DisplayUserSkills skills={currentUser.skills}/>
           </div>
       </div>
     );
